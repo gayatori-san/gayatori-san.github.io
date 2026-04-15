@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gayatri Giri ✦ Numerology & Insight</title>
+<title>Gayatri Giri ✦ Numerology & Tech</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -13,13 +13,9 @@
     --rose-deep:  #c96c85;
     --petal:      #fdf0f3;
     --cream:      #fdf6f0;
-    --mauve:      #b07080;
-    --deep:       #7a3d52;
     --text:       #4a2535;
     --text-soft:  #8a5565;
-    --gold:       #c9956a;
     --serif-disp: 'DM Serif Display', serif;
-    --serif:      'Playfair Display', serif;
     --body:       'Cormorant Garamond', serif;
     --sans:       'Lato', sans-serif;
   }
@@ -28,161 +24,14 @@
   html { scroll-behavior: smooth; }
   body { background: var(--petal); color: var(--text); font-family: var(--body); line-height: 1.7; overflow-x: hidden; }
 
-  /* ANIMATIONS */
+  /* PETAL RAIN */
   .petals { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
-  .petal-item { position:absolute; top:-40px; border-radius: 50% 0 50% 0; animation: fall linear infinite; opacity:0; }
+  .petal-item { position:absolute; top:-40px; width:10px; height:14px; background: #f9c5d0; border-radius: 50% 0 50% 0; animation: fall linear infinite; }
   @keyframes fall {
-    0%   { opacity:0; transform: translateY(0) rotate(0deg) scale(0.8); }
-    10%  { opacity:.7; }
-    100% { opacity:0; transform: translateY(110vh) rotate(360deg) scale(0.5); }
+    0%   { opacity:0; transform: translateY(0) rotate(0deg); }
+    10%  { opacity:0.6; }
+    100% { opacity:0; transform: translateY(110vh) rotate(360deg); }
   }
 
   /* NAV */
-  nav { position: fixed; top:0; left:0; right:0; z-index:900; background: rgba(253,240,243,0.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(232,160,176,0.3); height: 62px; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; }
-  .nav-logo { font-family: var(--serif-disp); color: var(--rose-deep); display: flex; align-items: center; gap: 0.5rem; }
-  .nav-links { display:flex; gap:2.5rem; list-style:none; }
-  .nav-links a { font-family: var(--sans); font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color: var(--text-soft); text-decoration:none; }
-
-  /* HERO */
-  #hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(160deg, #fdf0f3 0%, #fce4ec 40%, #fdf6f0 100%); position: relative; }
-  .hero-content { position:relative; z-index:1; }
-  .hero-subtitle { font-family:var(--sans); font-size:0.7rem; letter-spacing:0.35em; text-transform:uppercase; color:var(--rose-deep); margin-bottom:1.5rem; }
-  .hero-name { font-family:var(--serif-disp); font-size:clamp(3.5rem,9vw,7.5rem); line-height:0.95; color:var(--deep); }
-  .hero-desc { font-family:var(--body); font-size:1.3rem; font-style:italic; color:var(--text-soft); max-width:600px; margin: 1.5rem auto; }
-
-  /* PROJECTS */
-  section { padding:6rem 2rem; }
-  .section-inner { max-width:1040px; margin:0 auto; }
-  .project-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(400px,1fr)); gap:2rem; }
-  .project-card { background:white; border:1px solid rgba(232,160,176,0.3); border-radius:16px; padding:2.5rem; transition: transform .4s; }
-  .project-card:hover { transform:translateY(-5px); }
-  .project-name { font-family:var(--serif-disp); font-size:2rem; color:var(--deep); }
-  .project-sub { color:var(--rose-deep); font-style:italic; margin-bottom:1.5rem; }
-  .story-label { font-family:var(--sans); font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--rose-deep); margin-bottom:.3rem; }
-  
-  /* SKILLS */
-  .bento-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:1.2rem; }
-  .bento-card { background:rgba(255,251,252,0.85); border:1px solid rgba(232,160,176,0.25); border-radius:14px; padding:1.6rem; }
-  .b-wide{grid-column:span 6} .b-sm{grid-column:span 3} .b-full{grid-column:span 12}
-  .skill-bar { height:3px; background:rgba(232,160,176,0.2); margin-top:5px; border-radius:2px; }
-  .skill-fill { height:100%; background:var(--rose-deep); width:0; transition: width 1.5s; }
-
-  .reveal { opacity:0; transform:translateY(20px); transition: 0.8s; }
-  .reveal.visible { opacity:1; transform:translateY(0); }
-</style>
-</head>
-<body>
-
-<div class="petals" id="petals"></div>
-
-<nav>
-  <div class="nav-logo">✦ Gayatri Giri</div>
-  <ul class="nav-links">
-    <li><a href="#about">Philosophy</a></li>
-    <li><a href="#analysis">Analysis</a></li>
-    <li><a href="#contact">Consult</a></li>
-  </ul>
-</nav>
-
-<section id="hero">
-  <div class="hero-content">
-    <div class="hero-subtitle">Mathematical Insight & Vibrational Analysis</div>
-    <h1 class="hero-name">The Geometry<br>of <em>Destiny</em></h1>
-    <p class="hero-desc">Merging Python-driven data accuracy with the ancient wisdom of Numerology to decode personal and professional paths ✦</p>
-    <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
-        <span style="padding:5px 15px; border-radius:20px; border:1px solid var(--rose); font-family:var(--sans); font-size:0.7rem; color:var(--rose-deep);">CHALDEAN & PYTHAGOREAN</span>
-        <span style="padding:5px 15px; border-radius:20px; border:1px solid var(--rose); font-family:var(--sans); font-size:0.7rem; color:var(--rose-deep);">PATTERN RECOGNITION</span>
-        <span style="padding:5px 15px; border-radius:20px; border:1px solid var(--rose); font-family:var(--sans); font-size:0.7rem; color:var(--rose-deep);">VEDIC ASTROLOGY SYNERGY</span>
-    </div>
-  </div>
-</section>
-
-<section id="analysis">
-  <div class="section-inner">
-    <div style="text-align:center; margin-bottom:4rem;">
-        <h2 style="font-family:var(--serif-disp); font-size:3rem; color:var(--deep);">Case <em>Studies</em></h2>
-        <p style="font-style:italic; color:var(--text-soft);">Translating numbers into narratives</p>
-    </div>
-    <div class="project-grid">
-      <div class="project-card reveal">
-        <div class="project-name">MindFlow: Emotional Cycles</div>
-        <div class="project-sub">Personal Cycle Mapping via Data Science</div>
-        <div class="story-label">✦ Purpose</div>
-        <p style="margin-bottom:1rem;">Developed a system to track emotional ebbs and flows, aligning task completion with "Personal Year" and "Personal Month" numerological vibrations.</p>
-        <div class="story-label">✦ Insight Delivery</div>
-        <p>Used <strong>Python (Pandas)</strong> to visualize the correlation between specific numeric days and a user's creative output, helping individuals work <em>with</em> their numbers rather than against them.</p>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-name">Synergy Systems</div>
-        <div class="project-sub">Relationship & Financial Compatibility Analysis</div>
-        <div class="story-label">✦ Purpose</div>
-        <p style="margin-bottom:1rem;">Built a calculator to assess the vibrational match between individuals based on their Life Path and Destiny numbers.</p>
-        <div class="story-label">✦ Insight Delivery</div>
-        <p>Engineered a logic flow that evaluates "Radical Numbers" and "Lucky Numbers" to provide comprehensive financial and relationship health reports.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills" style="background:var(--white);">
-    <div class="section-inner">
-        <div class="bento-grid">
-            <div class="bento-card b-wide reveal">
-                <div class="story-label">✦ Analytical Toolkit</div>
-                <div style="margin-top:15px;">
-                    <p>Python for High-Volume Calculations</p>
-                    <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
-                </div>
-                <div style="margin-top:15px;">
-                    <p>Pattern Recognition & Data Viz (Matplotlib)</p>
-                    <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-                </div>
-                <div style="margin-top:15px;">
-                    <p>Algorithmic Compatibility Logic</p>
-                    <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-                </div>
-            </div>
-            <div class="bento-card b-wide reveal">
-                <div class="story-label">✦ Esoteric Knowledge</div>
-                <ul style="list-style:none; margin-top:15px; font-style:italic;">
-                    <li>✦ Chaldean & Pythagorean Systems</li>
-                    <li>✦ Vedic Kundli & Nakshatra Analysis</li>
-                    <li>✦ Name Numerology & Vibration Correction</li>
-                    <li>✦ Personal & Universal Year Cycles</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" style="text-align:center;">
-    <h2 style="font-family:var(--serif-disp); font-size:2.5rem; color:var(--deep);">Align Your <em>Numbers</em></h2>
-    <p style="margin:1rem 0 2.5rem; font-style:italic;">Seeking to bridge the gap between ancient wisdom and modern data analysis.</p>
-    <a href="mailto:g8805664808@gmail.com" style="display:inline-block; padding:15px 40px; background:var(--rose-deep); color:white; text-decoration:none; border-radius:30px; font-family:var(--sans); letter-spacing:2px;">CONTACT GAYATRI</a>
-</section>
-
-<script>
-  // Petals
-  const container = document.getElementById('petals');
-  for (let i = 0; i < 20; i++) {
-    const p = document.createElement('div');
-    p.className = 'petal-item';
-    p.style.left = Math.random() * 100 + 'vw';
-    p.style.animationDelay = Math.random() * 10 + 's';
-    p.style.animationDuration = (8 + Math.random() * 10) + 's';
-    p.style.width = (10 + Math.random() * 10) + 'px';
-    p.style.height = (12 + Math.random() * 10) + 'px';
-    p.style.background = `rgba(232, 160, 176, ${0.3 + Math.random() * 0.4})`;
-    container.appendChild(p);
-  }
-
-  // Reveal
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
-
-</body>
-</html>
+  nav { position: fixed; top:0; left:0; right:0; z-index:900; background: rgba(253,240,243,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid
